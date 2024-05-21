@@ -14,11 +14,12 @@ build:
   entry_points:
     - oat = oxDNA_analysis_tools.entry:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - setuptools >=42
@@ -31,7 +32,6 @@ requirements:
     - scikit-learn >0.21.2
     - matplotlib-base >3.0.0
     - biopython >1.73
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
